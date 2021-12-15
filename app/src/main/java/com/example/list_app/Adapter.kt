@@ -7,19 +7,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class Adapter(private val dataSet: Array<String>) :
+class Adapter(private val dataSet: ArrayList<ListData>) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+
+     //o ViewHolder é ofixador de visualização
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.idTextView)
+            textView = view.findViewById(R.id.textView)
         }
     }
 
@@ -27,7 +25,7 @@ class Adapter(private val dataSet: Array<String>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.activity_main, viewGroup, false)
+            .inflate(R.layout.list_item, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -37,8 +35,10 @@ class Adapter(private val dataSet: Array<String>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = dataSet[position]
+        viewHolder.textView.text = dataSet[position].string
+        //val textView : TextView =  viewHolder.textView.findViewById(R.id.textView)
     }
+
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size

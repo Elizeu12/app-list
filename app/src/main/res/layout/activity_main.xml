@@ -8,14 +8,15 @@
         tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="409dp"
-            android:layout_height="729dp"
+            android:layout_width="406dp"
+            android:layout_height="725dp"
             android:id="@+id/idTextView"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-            />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
