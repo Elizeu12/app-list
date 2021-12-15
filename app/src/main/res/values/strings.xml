@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">list-app</string>
+
+    <string-array name="teste_lista">
+        <item>teste1</item>
+        <item>teste2</item>
+        <item>teste3</item>
+        <item>teste4</item>
+    </string-array>
+    <string-array name="outro_teste">
+        <item>nha</item>
+        <item>nha</item>
+        <item>nha</item>
+        <item>nha</item>
+        <item>nha</item>
+    </string-array>
+</resources>
