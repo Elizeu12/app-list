@@ -9,12 +9,19 @@
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            >
+            android:orientation="horizontal"
+            android:id="@+id/LinearLayoutId"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_launcher_foreground"/>
 
         <TextView
                 android:text="&quot;isso é uma lista"
@@ -23,13 +30,18 @@
                 android:id="@+id/textView"
                 android:paddingBottom="16dp"
                 android:paddingTop="16dp"
+
                 android:layout_marginTop="10dp"/>
 
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/LinearLayoutId">
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

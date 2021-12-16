@@ -11,6 +11,7 @@
             android:layout_width="406dp"
             android:layout_height="725dp"
             android:id="@+id/idTextView"
+            android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
             app:layout_constraintTop_toTopOf="parent"
