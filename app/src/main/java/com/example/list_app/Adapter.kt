@@ -35,7 +35,7 @@ class Adapter(private val dataSet: ArrayList<ListData>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = dataSet[position].toString()
+        viewHolder.textView.text = dataSet[position].string
         //val textView : TextView =  viewHolder.textView.findViewById(R.id.textView)
     }
 

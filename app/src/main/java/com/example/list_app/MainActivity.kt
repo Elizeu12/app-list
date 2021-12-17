@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var listView: RecyclerView
     private lateinit var arrayList: ArrayList<ListData>
@@ -21,42 +22,46 @@ class MainActivity : AppCompatActivity() {
         listView.layoutManager = LinearLayoutManager(this)
         listView.setHasFixedSize(true)
 
-        arrayList = arrayListOf<ListData>()
+        arrayList = arrayListOf()
 
-        var retrofit: Retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
             .baseUrl("https://api.github.com/search/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val service: GitProjects = retrofit.create(GitProjects::class.java)
-        val dadosProjects: Call<List<Item>> = service.listRepos()
+        val repos: Call<List<Item>> = service.listRepos("")
 
-        dadosProjects.enqueue(object : Callback<List<Item>?> {
+        repos.enqueue(object : Callback<List<Item>?> {
             override fun onResponse(call: Call<List<Item>?>, response: Response<List<Item>?>) {
-                if (!response.isSuccessful){
-                    val responseBody = response.body()!!
+                if (!response.isSuccessful) {
+                    Log.e("MainActivity", "Resposta do servidor " + response.code())
+                    if (response.code() != 404) {
+                        val responseBody = response.body()!!
 
-                    for (dados in responseBody){
-                        val listData = ListData(dados.full_name.toString())
-                        arrayList.add(listData)
+                        for (dados in responseBody) {
+                            val listData = ListData(dados.full_name)
+                            arrayList.add(listData)
+                        }
                     }
                     listView.adapter = Adapter(arrayList)
+                } else {
+                    Log.e("MainActivity", "Resposta do servidor " + response.code())
                 }
-
             }
 
             override fun onFailure(call: Call<List<Item>?>, t: Throwable) {
-                Log.e("MainActivity","Erro: " + t.message)
+                Log.e("MainActivity", "Erro: " + t.message)
             }
         })
         /**string = arrayOf(
-            "item",
-            "item",
-            "item",
-            "item",
-            "item",
+        "item",
+        "item",
+        "item",
+        "item",
+        "item",
         )
-        */
+         */
 
 
     }
