@@ -3,6 +3,7 @@ package com.example.list_app
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -14,10 +15,12 @@ class Adapter(private val dataSet: ArrayList<ListData>) :
      //o ViewHolder é ofixador de visualização
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
+        val imageView: ImageView
 
         init {
             // Define click listener for the ViewHolder's View.
             textView = view.findViewById(R.id.textView)
+            imageView = view.findViewById(R.id.imageView)
         }
     }
 
@@ -36,7 +39,8 @@ class Adapter(private val dataSet: ArrayList<ListData>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = dataSet[position].string
-        //val textView : TextView =  viewHolder.textView.findViewById(R.id.textView)
+        val imageUrl = dataSet[position].url
+        viewHolder.imageView.set(imageUrl)
     }
 
 
