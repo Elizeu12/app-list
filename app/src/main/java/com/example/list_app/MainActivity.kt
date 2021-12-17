@@ -30,21 +30,22 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val service: GitProjects = retrofit.create(GitProjects::class.java)
-        val repos: Call<List<Item>> = service.listRepos("")
+        val repos: Call<List<Item>> = service.listRepos("q=language:kotlin")
 
         repos.enqueue(object : Callback<List<Item>?> {
             override fun onResponse(call: Call<List<Item>?>, response: Response<List<Item>?>) {
                 if (!response.isSuccessful) {
                     Log.e("MainActivity", "Resposta do servidor " + response.code())
-                    if (response.code() != 404) {
+                    if (response.code() == 200) {
                         val responseBody = response.body()!!
 
                         for (dados in responseBody) {
                             val listData = ListData(dados.full_name)
                             arrayList.add(listData)
                         }
+                        listView.adapter = Adapter(arrayList)
                     }
-                    listView.adapter = Adapter(arrayList)
+
                 } else {
                     Log.e("MainActivity", "Resposta do servidor " + response.code())
                 }
