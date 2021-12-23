@@ -142,4 +142,7 @@ class ActivityLoad : AppCompatActivity() {
          */
         private const val UI_ANIMATION_DELAY = 300
     }
+    fun visible(visivel: Boolean){
+            this.setVisible(visivel)
+    }
 }

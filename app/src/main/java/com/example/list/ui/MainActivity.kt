@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setVisible(false)
+        ActivityLoad
         setContentView(R.layout.activity_main)
 
         listView = findViewById(R.id.idTextView)
