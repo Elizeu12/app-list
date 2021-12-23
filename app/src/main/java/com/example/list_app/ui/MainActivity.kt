@@ -1,14 +1,14 @@
-package com.example.list_app
+package com.example.list_app.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import data.Item
-import data_request.Adapter
-import data_request.GitProjects
-import data_request.ListData
+import com.example.list_app.R
+import com.example.list_app.data.GitProjects
+import com.example.list_app.model.Item
+import com.example.list_app.data.ListData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level

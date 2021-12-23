@@ -1,4 +1,4 @@
-package data
+package com.example.list_app.model
 
 data class Owner(
     val avatar_url: String,

@@ -12,13 +12,13 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Listapp">
         <activity
-                android:name=".ActivityLoad"
+                android:name="com.example.list_app.ui.ActivityLoad"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_load"
                 android:theme="@style/Theme.Listapp.Fullscreen">
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name="com.example.list_app.ui.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

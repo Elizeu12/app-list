@@ -1,4 +1,4 @@
-package data_request
+package com.example.list_app.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.list_app.R
+import com.example.list_app.data.ListData
 import com.squareup.picasso.Picasso
 
 

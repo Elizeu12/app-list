@@ -1,4 +1,4 @@
-package com.example.list_app
+package com.example.list_app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint

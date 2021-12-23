@@ -1,7 +1,7 @@
-package data_request
+package com.example.list_app.ui
 
-import data.Item
-import data.Owner
+import com.example.list_app.model.Item
+import com.example.list_app.model.Owner
 
 data class dados(
     val incomplete_results: Boolean,
