@@ -15,7 +15,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal"
             android:id="@+id/LinearLayoutId"
-            app:layout_constraintEnd_toEndOf="parent">
+            >
 
         <ImageView
                 android:id="@+id/imageView"
@@ -30,6 +30,7 @@
                 android:id="@+id/textView"
                 android:paddingBottom="16dp"
                 android:paddingTop="16dp"
+                android:paddingLeft="16dp"
 
                 android:layout_marginTop="10dp"/>
 

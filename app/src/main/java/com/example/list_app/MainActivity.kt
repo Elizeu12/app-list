@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                     if (response.code() == 200) {
                         val responseBody = response.body()!!
                         for (Dados in responseBody) {
-                            val listData = ListData(Dados.name)
+                            val listData = ListData(Dados.name,Dados.owner.avatar_url)
                             arrayList.add(listData)
                         }
                         listView.adapter = Adapter(arrayList)
