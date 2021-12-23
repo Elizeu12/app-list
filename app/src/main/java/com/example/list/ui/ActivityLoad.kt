@@ -1,4 +1,4 @@
-package com.example.list_app.ui
+package com.example.list.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.annotation.SuppressLint
@@ -8,7 +8,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.example.list_app.databinding.ActivityLoadBinding
+import com.example.list.databinding.ActivityLoadBinding
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

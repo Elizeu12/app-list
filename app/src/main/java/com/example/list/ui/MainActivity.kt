@@ -1,14 +1,14 @@
-package com.example.list_app.ui
+package com.example.list.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.list_app.R
-import com.example.list_app.data.GitProjects
-import com.example.list_app.model.Item
-import com.example.list_app.data.ListData
+import com.example.list.R
+import com.example.list.data.RetrofitRequest
+import com.example.list.model.Item
+import com.example.list.data.ListData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -44,8 +44,9 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service: GitProjects = retrofit.create(GitProjects::class.java)
-        val repos: Call<List<Item>> = service.listRepos("q=language:kotlin")
+        val service: RetrofitRequest = retrofit.create(RetrofitRequest::class.java)
+        val repos: Call<List<Item>> = service.listRepos(
+            "q=language:kotlin", "page=1", "sort=stars", "items=name:square")
 
         repos.enqueue(object : Callback<List<Item>?> {
             override fun onResponse(call: Call<List<Item>?>, response: Response<List<Item>?>) {
@@ -53,7 +54,14 @@ class MainActivity : AppCompatActivity() {
                     if (response.code() == 200) {
                         val responseBody = response.body()!!
                         for (Dados in responseBody) {
-                            val listData = ListData(Dados.name,Dados.owner.avatar_url)
+                            val listData = ListData(
+                                Dados.name,
+                                Dados.owner.avatar_url,
+                                Dados.stargazers_count,
+                                Dados.forks,
+                                Dados.owner.login
+                            )
+
                             arrayList.add(listData)
                         }
                         listView.adapter = Adapter(arrayList)
@@ -68,14 +76,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e("MainActivity", "Erro: " + t.message)
             }
         })
-        /**string = arrayOf(
-        "item",
-        "item",
-        "item",
-        "item",
-        "item",
-        )
-         */
 
     }
 }

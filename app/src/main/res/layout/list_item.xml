@@ -23,20 +23,56 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_launcher_foreground"/>
 
-        <TextView
-                android:text="&quot;isso é uma lista"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
-                android:paddingLeft="16dp"
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutId">
 
-                android:layout_marginTop="10dp"/>
+            <TextView
+                    android:text="forks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/textForks"
+                    />
 
+            <TextView
+                    android:text="isso é uma lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:id="@+id/textLogin"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutId">
+
+            <TextView
+                    android:text=" ⭐"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/starView"
+                    />
+
+            <TextView
+                    android:text="isso é uma lista"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:id="@+id/textName"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
-
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -44,5 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/LinearLayoutId">
 
 
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

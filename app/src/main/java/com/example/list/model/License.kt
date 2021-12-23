@@ -1,4 +1,4 @@
-package com.example.list_app.model
+package com.example.list.model
 
 data class License(
     val key: String,

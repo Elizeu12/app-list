@@ -1,4 +1,4 @@
-package com.example.list_app
+package com.example.list
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

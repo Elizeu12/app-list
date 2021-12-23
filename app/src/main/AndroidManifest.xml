@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.list_app">
+          package="com.example.list">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,13 +12,13 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Listapp">
         <activity
-                android:name="com.example.list_app.ui.ActivityLoad"
+                android:name="com.example.list.ui.ActivityLoad"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_load"
                 android:theme="@style/Theme.Listapp.Fullscreen">
         </activity>
         <activity
-                android:name="com.example.list_app.ui.MainActivity"
+                android:name="com.example.list.ui.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

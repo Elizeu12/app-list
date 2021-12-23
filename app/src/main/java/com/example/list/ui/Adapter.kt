@@ -1,4 +1,4 @@
-package com.example.list_app.ui
+package com.example.list.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.list_app.R
-import com.example.list_app.data.ListData
+import com.example.list.R
+import com.example.list.data.ListData
 import com.squareup.picasso.Picasso
 
 
@@ -19,11 +19,17 @@ class Adapter(private val dataSet: ArrayList<ListData>) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
         val imageView: ImageView
+        val starView: TextView
+        val textForks: TextView
+        val textLogin: TextView
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.textView)
+            textView = view.findViewById(R.id.textName)
             imageView = view.findViewById(R.id.imageView)
+            starView = view.findViewById(R.id.starView)
+            textForks = view.findViewById(R.id.textForks)
+            textLogin = view.findViewById(R.id.textLogin)
         }
     }
 
@@ -41,6 +47,10 @@ class Adapter(private val dataSet: ArrayList<ListData>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
+
+        viewHolder.textLogin.text = "Autor: " + dataSet[position].login
+        viewHolder.textForks.text = "Forks " + dataSet[position].forks.toString()
+        viewHolder.starView.text = "⭐ " + dataSet[position].star.toString()
         viewHolder.textView.text = dataSet[position].string
         Picasso.get().load(dataSet[position].url).resize(100, 100).into(viewHolder.imageView)
     }

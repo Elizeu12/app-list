@@ -1,4 +1,4 @@
-package com.example.list_app
+package com.example.list
 
 import org.junit.Test
 
