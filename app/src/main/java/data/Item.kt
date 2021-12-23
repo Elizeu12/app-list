@@ -1,4 +1,4 @@
-package com.example.list_app
+package data
 
 data class Item(
     val allow_forking: Boolean,

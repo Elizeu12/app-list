@@ -5,6 +5,10 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import data.Item
+import data_request.Adapter
+import data_request.GitProjects
+import data_request.ListData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
@@ -72,7 +76,6 @@ class MainActivity : AppCompatActivity() {
         "item",
         )
          */
-
 
     }
 }

@@ -1,4 +1,4 @@
-package com.example.list_app
+package data_request
 
 import retrofit2.http.Url
 import java.net.URI

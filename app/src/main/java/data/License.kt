@@ -1,4 +1,4 @@
-package com.example.list_app
+package data
 
 data class License(
     val key: String,

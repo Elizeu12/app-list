@@ -1,15 +1,13 @@
-package com.example.list_app
+package data_request
 
-import android.app.Notification
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.example.list_app.R
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.RequestCreator
 
 
 class Adapter(private val dataSet: ArrayList<ListData>) :
